@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Icon from 'react-native-vector-icons/AntDesign';
+Icon.loadFont();
 
 import Colors from '../../global/colors';
 import { IInput } from './Models';
@@ -11,9 +12,10 @@ const Input: React.FC<IInput> = ({ placeholder, keyboardType, value, onChangeTex
   return (
     <S.Container>
       <S.BoxInput>
-        <Icon name={'search1'} size={20} color={Colors.SUPPORT_900} />
+        <Icon testID={'iconSearch'} name={'search1'} size={20} color={Colors.SUPPORT_900} />
       </S.BoxInput>
       <S.TextInputCustom
+        testID={'input'}
         placeholder={placeholder}
         placeholderTextColor={Colors.SUPPORT_900}
         keyboardType={keyboardType}
