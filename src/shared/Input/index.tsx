@@ -12,9 +12,10 @@ const Input: React.FC<IInput> = ({ placeholder, keyboardType, value, onChangeTex
   return (
     <S.Container>
       <S.BoxInput>
-        <Icon name={'search1'} size={20} color={Colors.SUPPORT_900} />
+        <Icon testID={'iconSearch'} name={'search1'} size={20} color={Colors.SUPPORT_900} />
       </S.BoxInput>
       <S.TextInputCustom
+        testID={'input'}
         placeholder={placeholder}
         placeholderTextColor={Colors.SUPPORT_900}
         keyboardType={keyboardType}
