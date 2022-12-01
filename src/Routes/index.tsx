@@ -1,5 +1,6 @@
 import React from 'react';
 import { Alert, Image, StyleSheet } from 'react-native';
+import { useSelector } from 'react-redux';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -10,6 +11,8 @@ import Internal from '../screens/Internal';
 const Stack = createNativeStackNavigator();
 
 const Routes = () => {
+  const { routeName } = useSelector((state: any) => state.info);
+
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -23,7 +26,7 @@ const Routes = () => {
         name={'Internal'}
         component={Internal}
         options={{
-          headerTitle: 'repo'
+          headerTitle: routeName,
         }}
       />
     </Stack.Navigator>
