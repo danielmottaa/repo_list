@@ -1,21 +1,21 @@
 import styled from 'styled-components/native';
 import { Heading } from '../../global/typography';
 import Colors from '../../global/colors';
-import { FlatList, ScrollView } from 'react-native';
+import { FlatList, Platform, ScrollView } from 'react-native';
 
 export const Container = styled.View`
-  padding: 40px 20px 20px 20px;
+  padding: 40px 20px 00px 20px;
   background-color: ${Colors.WITHE};
 `;
 
 export const TitleHome = styled.Text`
-  margin-top: 30px;
+  margin-top: ${Platform.OS === 'ios' ? 30 : 0}px;
   color: ${Colors.BLACK};
   ${Heading.PRIMARY}
 `;
 
 export const BoxInput = styled.View`
-  margin-top: 10px;
+  margin-top: ${Platform.OS === 'ios' ? 10 : 0}px;
 `;
 
 export const BoxFlatlist = styled.View`
@@ -23,7 +23,7 @@ export const BoxFlatlist = styled.View`
 `;
 
 export const FlatListCustom = styled(FlatList)`
-  margin-bottom: 300px;
+  margin-bottom:  ${Platform.OS === 'android' ? 220 : 300}px;
 `;
 
 export const ContainerContent = styled.View``;

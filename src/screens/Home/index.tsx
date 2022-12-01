@@ -1,40 +1,41 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import React, {Fragment, useEffect, useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import HorizontalLine from '../../shared/HorizontalLine';
 import Input from '../../shared/Input';
 import api from '../../services/api';
 import FooterList from '../../shared/FooterList';
-import { useDispatch } from 'react-redux';
-import { changeRouteName } from '../../store/ducks/info';
+import {useDispatch} from 'react-redux';
+import {changeRouteName} from '../../store/ducks/info';
 import * as S from './styles';
 
 const Home: React.FC = () => {
-
   const [data, setData] = useState<any>([]);
   const [searchData, setSearchData] = useState('');
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [filteredData, setFilteredData] = useState([]);
-  const { navigate } = useNavigation<any>();
+  const {navigate} = useNavigation<any>();
   const dispatch = useDispatch();
   const perPage = 15;
 
   const getInfoUserGithub = async () => {
     try {
-      setLoading(true)
+      setLoading(true);
       if (filteredData) {
-        const response = await api.get(`/search/repositories?q=diego3g&per_page=${perPage}&page=${page}&string=${searchData}`);
+        const response = await api.get(
+          `/search/repositories?q=react-native&per_page=${perPage}&page=${page}`,
+        );
         setData([...data, ...response.data.items]);
       }
-      setLoading(false)
+      setLoading(false);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const loadMoreItem = () => {
     setPage(page + 1);
-  }
+  };
 
   useEffect(() => {
     getInfoUserGithub();
@@ -42,20 +43,20 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     if (!!data.length) {
-      setFilteredData(data)
+      setFilteredData(data);
     }
   }, [data]);
 
-
-  const renderItem = ({ item }: any) => {
+  const renderItem = ({item}: any) => {
     return (
       <Fragment key={item}>
         <S.ContainerContent>
-          <S.ContentInLine onPress={() => {
-            dispatch(changeRouteName(item.name))
-            navigate('Internal', { item })
-          }}>
-            <S.ImageCustom source={{ uri: item?.owner?.avatar_url }} />
+          <S.ContentInLine
+            onPress={() => {
+              dispatch(changeRouteName(item.name));
+              navigate('Internal', {item});
+            }}>
+            <S.ImageCustom source={{uri: item?.owner?.avatar_url}} />
             <S.BoxNameRepoAndOwner>
               <S.NameRepo>{item.name}</S.NameRepo>
               <S.NameOwner>{item?.owner?.login}</S.NameOwner>
@@ -66,7 +67,7 @@ const Home: React.FC = () => {
         <HorizontalLine />
       </Fragment>
     );
-  }
+  };
 
   return (
     <S.Container>
@@ -79,9 +80,11 @@ const Home: React.FC = () => {
           onChangeText={text => setSearchData(text)}
           onSubmitEditing={() => {
             const filterData = data?.filter((item: any) => {
-              return item?.name?.toLowerCase().indexOf(searchData.toLowerCase()) >= 0;
+              return (
+                item?.name?.toLowerCase().indexOf(searchData.toLowerCase()) >= 0
+              );
             });
-            setFilteredData(filterData)
+            setFilteredData(filterData);
           }}
         />
       </S.BoxInput>
@@ -96,10 +99,9 @@ const Home: React.FC = () => {
           onEndReachedThreshold={0.1}
           ListFooterComponent={<FooterList load={loading} />}
         />
-
       </S.BoxFlatlist>
     </S.Container>
   );
-}
+};
 
 export default Home;
