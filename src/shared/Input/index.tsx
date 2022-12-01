@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Icon from 'react-native-vector-icons/AntDesign';
+Icon.loadFont();
 
 import Colors from '../../global/colors';
 import { IInput } from './Models';
