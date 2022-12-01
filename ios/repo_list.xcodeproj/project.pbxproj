@@ -12,7 +12,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		678E21982938290000170CE2 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 678E21972938290000170CE2 /* Fonts */; };
+		676A245B2938B4C30058C5A3 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 676A24592938B3C80058C5A3 /* Fonts */; };
 		67A8080E29382174004AFACF /* FontsFree-Net-SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67A8080D29382174004AFACF /* FontsFree-Net-SFProDisplay-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-repo_list-repo_listTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-repo_list-repo_listTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -43,7 +43,7 @@
 		5709B34CF0A7D63546082F79 /* Pods-repo_list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repo_list.release.xcconfig"; path = "Target Support Files/Pods-repo_list/Pods-repo_list.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-repo_list-repo_listTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repo_list-repo_listTests.debug.xcconfig"; path = "Target Support Files/Pods-repo_list-repo_listTests/Pods-repo_list-repo_listTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-repo_list.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-repo_list.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		678E21972938290000170CE2 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		676A24592938B3C80058C5A3 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
 		67A8080D29382174004AFACF /* FontsFree-Net-SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = repo_list/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-repo_list-repo_listTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repo_list-repo_listTests.release.xcconfig"; path = "Target Support Files/Pods-repo_list-repo_listTests/Pods-repo_list-repo_listTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +90,8 @@
 		13B07FAE1A68108700A75B9A /* repo_list */ = {
 			isa = PBXGroup;
 			children = (
+				67A8080D29382174004AFACF /* FontsFree-Net-SFProDisplay-Regular.ttf */,
+				676A24592938B3C80058C5A3 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -120,8 +122,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				67A8080D29382174004AFACF /* FontsFree-Net-SFProDisplay-Regular.ttf */,
-				678E21972938290000170CE2 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* repo_list */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* repo_listTests */,
@@ -248,10 +248,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				676A245B2938B4C30058C5A3 /* Fonts in Resources */,
 				67A8080E29382174004AFACF /* FontsFree-Net-SFProDisplay-Regular.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				678E21982938290000170CE2 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

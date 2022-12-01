@@ -23,7 +23,7 @@ const Routes = () => {
         name={'Internal'}
         component={Internal}
         options={{
-          
+          headerTitle: 'repo'
         }}
       />
     </Stack.Navigator>
